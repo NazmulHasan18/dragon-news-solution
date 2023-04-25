@@ -7,6 +7,7 @@ import LatestNews from "../pages/Shared/Banner/LatestNews";
 import { Outlet } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import NavbarLink from "../pages/Shared/Navbar/Navbar";
+import RightNav from "../pages/Shared/RightNav/RightNav";
 
 const Main = () => {
    return (
@@ -22,7 +23,9 @@ const Main = () => {
                <Col lg={6}>
                   <Outlet></Outlet>
                </Col>
-               <Col lg={3}>Right Nav</Col>
+               <Col lg={3}>
+                  <RightNav></RightNav>
+               </Col>
             </Row>
          </Container>
 

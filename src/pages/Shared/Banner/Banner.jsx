@@ -5,7 +5,7 @@ import moment from "moment/moment";
 
 const Banner = () => {
    return (
-      <div>
+      <div className="mt-4">
          <img src={logo} alt="" />
          <p className="text-secondary mt-3 mb-2">Journalism Without Fear or Favour</p>
          <p className="text-secondary fw-semibold mb-4">
