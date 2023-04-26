@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import moment from "moment";
@@ -7,7 +8,6 @@ import { FaEye, FaRegBookmark, FaRegStar, FaShareAlt, FaStar } from "react-icons
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
-// eslint-disable-next-line react/prop-types
 const NewsCard = ({ news }) => {
    const { _id, details, image_url, rating, title, author, total_view } = news;
    const { img, name, published_date } = author;
