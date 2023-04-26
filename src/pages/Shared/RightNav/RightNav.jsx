@@ -56,7 +56,7 @@ const RightNav = () => {
                Discover thousands of options, easy to customize layouts, one-click to import demo and much
                more.
             </p>
-            <Button variant="danger rounded-0 my-4">Learn More</Button>
+            <Button variant="danger rounded-0 my-4 px-4 fs-5 py-3">Learn More</Button>
          </div>
       </>
    );
