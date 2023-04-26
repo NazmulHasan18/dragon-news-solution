@@ -1,13 +1,16 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import NewsCard from "../../Shared/NewsCard/NewsCard";
 
 const CategoryNews = () => {
-   const { id } = useParams();
-   console.log(id);
+   const categoryNews = useLoaderData();
+   console.log(categoryNews);
    return (
       <div>
-         <h2>Category{id}</h2>
+         {categoryNews.map((category) => (
+            <NewsCard key={category._id} news={category}></NewsCard>
+         ))}
       </div>
    );
 };

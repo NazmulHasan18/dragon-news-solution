@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+// import NewsCard from "../../Shared/NewsCard/NewsCard";
 
 const Home = () => {
-   return (
-      <div>
-         <h3>this is from Home</h3>
-      </div>
-   );
+   const news = useLoaderData();
+   console.log(news);
+   return <div>{/* <NewsCard></NewsCard> */}</div>;
 };
 
 export default Home;
