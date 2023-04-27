@@ -30,7 +30,7 @@ const Login = () => {
             </Form.Group>
 
             <Button variant="primary" type="submit" className="w-100 rounded-0 bg-secondary border-0 mt-2">
-               Submit
+               Login
             </Button>
             <Form.Text className="text-muted"></Form.Text>
          </Form>

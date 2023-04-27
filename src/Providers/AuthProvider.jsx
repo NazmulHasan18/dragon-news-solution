@@ -9,9 +9,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
    const user = { displayName: "nazmul" };
-   const authInfo = {
-      user,
-   };
+   const authInfo = { auth, user };
 
    return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };
