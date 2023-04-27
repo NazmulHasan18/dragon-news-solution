@@ -9,7 +9,8 @@ import bgImg from "../../../assets/bg.png";
 import { Link } from "react-router-dom";
 import QZone from "../../Home/QZone/QZone";
 
-const RightNav = () => {
+// eslint-disable-next-line react/prop-types
+const RightNav = ({ show }) => {
    return (
       <>
          <div>
@@ -47,17 +48,19 @@ const RightNav = () => {
             </ListGroup>
          </div>
          <QZone></QZone>
-         <div
-            className="mt-4 text-center text-white"
-            style={{ backgroundImage: `url(${bgImg})`, padding: "65px 39px" }}
-         >
-            <h2>Create an Amazing Newspaper</h2>
-            <p className="fs-5 mt-4">
-               Discover thousands of options, easy to customize layouts, one-click to import demo and much
-               more.
-            </p>
-            <Button variant="danger rounded-0 my-4 px-4 fs-5 py-3">Learn More</Button>
-         </div>
+         {show && (
+            <div
+               className="mt-4 text-center text-white"
+               style={{ backgroundImage: `url(${bgImg})`, padding: "65px 39px" }}
+            >
+               <h2>Create an Amazing Newspaper</h2>
+               <p className="fs-5 mt-4">
+                  Discover thousands of options, easy to customize layouts, one-click to import demo and much
+                  more.
+               </p>
+               <Button variant="danger rounded-0 my-4 px-4 fs-5 py-3">Learn More</Button>
+            </div>
+         )}
       </>
    );
 };

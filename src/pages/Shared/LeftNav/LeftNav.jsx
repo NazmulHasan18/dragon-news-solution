@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import EditorsInsight from "../../News/EditorsInsight/EditorsInsight";
 
 const LeftNav = () => {
    const [categories, setCategories] = useState([]);
@@ -28,6 +29,7 @@ const LeftNav = () => {
                </p>
             ))}
          </div>
+         <EditorsInsight leftNav={true}></EditorsInsight>
       </div>
    );
 };

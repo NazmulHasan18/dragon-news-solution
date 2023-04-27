@@ -33,7 +33,7 @@ const NewsCard = ({ news }) => {
                ) : (
                   <>
                      {details.slice(0, 250)}... <br />
-                     <Link className="text-decoration-none text-warning fw-bold" to={`/news/${_id}`}>
+                     <Link className=" text-warning fw-bold " to={`/news/${_id}`}>
                         Read More
                      </Link>
                   </>
@@ -48,7 +48,7 @@ const NewsCard = ({ news }) => {
                   placeholderSymbol={<FaStar></FaStar>}
                   fullSymbol={<FaStar />}
                   readonly
-                  className="text-warning"
+                  className="text-warning "
                />{" "}
                <span>{rating.number}</span>
             </div>

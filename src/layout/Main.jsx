@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 
 import Banner from "../pages/Shared/Banner/Banner";
 import Footer from "../pages/Shared/Footer/Footer";
@@ -27,7 +27,7 @@ const Main = () => {
                   <Outlet></Outlet>
                </Col>
                <Col lg={3}>
-                  <RightNav></RightNav>
+                  <RightNav show={true}></RightNav>
                </Col>
             </Row>
          </Container>
