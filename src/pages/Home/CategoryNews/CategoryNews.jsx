@@ -5,12 +5,15 @@ import NewsCard from "../../Shared/NewsCard/NewsCard";
 
 const CategoryNews = () => {
    const categoryNews = useLoaderData();
-   //    console.log(categoryNews);
+
+   // console.log(categoryNews.length);
    return (
       <div>
-         {categoryNews.map((category) => (
-            <NewsCard key={category._id} news={category}></NewsCard>
-         ))}
+         {categoryNews.length !== 0 ? (
+            categoryNews.map((category) => <NewsCard key={category._id} news={category}></NewsCard>)
+         ) : (
+            <h3>No News In This Category</h3>
+         )}
       </div>
    );
 };

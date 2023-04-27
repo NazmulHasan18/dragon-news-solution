@@ -7,7 +7,7 @@ const LatestNews = () => {
    return (
       <div className="p-2 d-flex bg-primary-subtle">
          <Button variant="danger" className="rounded-0">
-            Danger
+            Latest
          </Button>
          <Marquee
             pauseOnHover={true}

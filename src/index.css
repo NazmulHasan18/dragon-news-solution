@@ -1,5 +1,5 @@
 .bg-primary-subtle {
-   background-color: #f3f3f3;
+   background-color: #f3f3f3 !important;
 }
 .bg-btn {
    background-color: #403f3f;
