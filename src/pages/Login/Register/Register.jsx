@@ -101,17 +101,23 @@ const Register = () => {
                />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-               <Form.Check.Input type="checkbox" name="checked" onClick={() => setChecked(!checked)} />
-               <Form.Check.Label className="ms-2">
-                  Accept{" "}
-                  <Link
-                     className=" text-black"
-                     to="https://www.termsfeed.com/live/a696c038-a3f7-4c30-b742-a4504968f865    "
-                  >
-                     terms and conditions
-                  </Link>
-               </Form.Check.Label>
+               <Form.Check
+                  type="checkbox"
+                  label={
+                     <>
+                        Accept{" "}
+                        <Link
+                           className=" text-black"
+                           to="https://www.termsfeed.com/live/a696c038-a3f7-4c30-b742-a4504968f865    "
+                        >
+                           terms and conditions
+                        </Link>
+                     </>
+                  }
+                  onClick={() => setChecked(!checked)}
+               />
             </Form.Group>
+
             <Form.Text className="text-danger">{err}</Form.Text>
 
             <Button
