@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const NavbarLink = () => {
-   const { user } = useContext(AuthContext);
+   const { user, logOut } = useContext(AuthContext);
    return (
       <div className="my-3">
          <Navbar>
@@ -28,7 +28,11 @@ const NavbarLink = () => {
                         <Link className="text-decoration-none text-secondary " to="/profile">
                            <FaUserCircle className="fs-3" />
                         </Link>
-                        <Button variant="secondary" className="ms-2 rounded-0 fw-bold text-white">
+                        <Button
+                           variant="secondary"
+                           className="ms-2 rounded-0 fw-bold text-white"
+                           onClick={() => logOut()}
+                        >
                            Logout
                         </Button>
                      </>

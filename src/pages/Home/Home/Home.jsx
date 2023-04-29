@@ -6,7 +6,7 @@ import NewsCard from "../../Shared/NewsCard/NewsCard";
 
 const Home = () => {
    const news = useLoaderData();
-   console.log(news);
+
    return (
       <div>
          {news.map((category) => (

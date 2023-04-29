@@ -1,19 +1,57 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Register = () => {
+   // ?context api access is here
+
+   const { createEmailAccount, profileUpdater, user } = useContext(AuthContext);
+
+   const navigate = useNavigate();
+
+   // ! This check is for enabling Register button
    const [checked, setChecked] = useState(false);
-   //    console.log(checked);
+
+   const [err, setErr] = useState("");
+
    const handelRegister = (e) => {
       e.preventDefault();
+      setErr("");
+
       const from = e.target;
       const name = from.name.value;
       const email = from.email.value;
       const password = from.password.value;
       const url = from.photo.value;
-      console.log(name, email, password, url, checked);
+      if (user) {
+         setErr("Already Have An User Please Log Out First");
+         from.reset();
+      } else {
+         createEmailAccount(email, password)
+            .then((result) => {
+               // Signed in
+
+               const user = result.user;
+               console.log(user);
+               profileUpdater(name, url)
+                  .then(() => {
+                     from.reset();
+                     navigate("/");
+                  })
+                  .catch((error) => {
+                     setErr(error.message);
+                  });
+
+               // ...
+            })
+            .catch((error) => {
+               const errorMessage = error.message;
+               setErr(errorMessage);
+               // ..
+            });
+      }
    };
 
    return (
@@ -68,12 +106,13 @@ const Register = () => {
                   Accept{" "}
                   <Link
                      className=" text-black"
-                     to="https://www.termsfeed.com/live/a696c038-a3f7-4c30-b742-a4504968f865"
+                     to="https://www.termsfeed.com/live/a696c038-a3f7-4c30-b742-a4504968f865    "
                   >
                      terms and conditions
                   </Link>
                </Form.Check.Label>
             </Form.Group>
+            <Form.Text className="text-danger">{err}</Form.Text>
 
             <Button
                variant="primary"
